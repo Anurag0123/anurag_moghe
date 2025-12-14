@@ -1,0 +1,31 @@
+company,year,incidents
+Tesla,2021,12
+Tesla,2022,18
+Shell,2021,30
+Shell,2022,35
+ExxonMobil,2021,45
+ExxonMobil,2022,42
+BP,2021,28
+BP,2022,32
+Chevron,2021,38
+Chevron,2022,40
+Volkswagen,2021,15
+Volkswagen,2022,12
+Ford,2021,22
+Ford,2022,20
+Toyota,2021,18
+Toyota,2022,16
+General Motors,2021,25
+General Motors,2022,23
+Coca-Cola,2021,5
+Coca-Cola,2022,4
+Nestle,2021,6
+Nestle,2022,5
+Apple,2021,8
+Apple,2022,7
+Microsoft,2021,3
+Microsoft,2022,2
+Google,2021,4
+Google,2022,3
+Amazon,2021,15
+Amazon,2022,17

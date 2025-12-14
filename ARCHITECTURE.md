@@ -3,22 +3,39 @@
 ```markdown
 # Architecture Overview
 
-Below, sketch (ASCII, hand-drawn JPEG/PNG pasted in, or ASCII art) the high-level components of your agent.
+The agent follows a sequential architecture for ESG risk assessment:
+
+```
+User Input (Company Name)
+    |
+    v
+Planner (Uses Gemini to break down tasks)
+    |
+    v
+Executor (For each task: Analyze datasets + Call Gemini)
+    |   (Stores intermediate results in Memory)
+    v
+Memory (Persistent storage of task results and final report)
+    |
+    v
+Final Risk Report (Compiled analysis and recommendations)
+```
 
 ## Components
 
 1. **User Interface**  
-   - E.g., Streamlit, CLI, Slack bot  
+   - CLI input for company name  
 
 2. **Agent Core**  
-   - **Planner**: how you break down tasks  
-   - **Executor**: LLM prompt + tool-calling logic  
-   - **Memory**: vector store, cache, or on-disk logs  
+   - **Planner**: Uses Gemini AI to dynamically generate a list of tasks based on user goal  
+   - **Executor**: Iterates through tasks, loads relevant datasets (emissions.csv, incidents.csv), and uses Gemini for analysis  
+   - **Memory**: In-memory dictionary for storing task results and final reports  
 
 3. **Tools / APIs**  
-   - E.g., Google Gemini API, Tools, etc
+   - Google Gemini API for planning and analysis  
+   - Pandas for data manipulation  
 
 4. **Observability**  
-   - Logging of each reasoning step  
-   - Error handling / retries  
+   - Print statements for task progress  
+   - Error handling in Gemini calls  
 
